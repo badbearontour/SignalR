@@ -11,7 +11,7 @@ namespace Microsoft.AspNet.SignalR.Messaging
 {
     internal class DefaultSubscription : Subscription
     {
-        private const string _defaultCursorPrefix = "d-";
+        private static string _defaultCursorPrefix = "d-" + Guid.NewGuid() + "-";
 
         private List<Cursor> _cursors;
         private List<Topic> _cursorTopics;
